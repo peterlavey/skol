@@ -1,24 +1,40 @@
 import React from 'react';
+import Radar from "../radar";
 
 const Beer = ({data})=> {
     return (
         <div className="card">
-            <div className="row no-gutters">
-                <div className="col-md-4">
-                    <img src={data.image} className="card-img" alt={data.name}/>
-                </div>
-                <div className="col-md-8">
-                    <div className="card-body">
-                        <h5 className="card-title">{data.name}</h5>
-                        <p className="card-text">{data.brewery}</p>
-                        <ul className="list-group list-group-flush">
-                            <li className="list-group-item">Tipo: {data.type}</li>
-                            <li className="list-group-item">IBU: {data.ibu}</li>
-                            <li className="list-group-item">ABV: {data.abv}%</li>
-                            <li className="list-group-item">SRM: {data.srm}</li>
-                        </ul>
-                    </div>
-                </div>
+            <div className="view overlay">
+                <img className="card-img-top" src={data.image} alt={data.name}/>
+                    <a href="#!">
+                        <div className="mask rgba-white-slight"/>
+                    </a>
+            </div>
+
+            <div className="card-body">
+                <h4 className="card-title">{data.name}</h4>
+                <p className="card-text">{data.brewery} - {data.type[0]}</p>
+
+                <Radar data={data.taste}/>
+            </div>
+
+            <div className="rounded-bottom mdb-color lighten-3 text-center pt-3">
+                <ul className="list-unstyled list-inline font-small">
+                    <li className="list-inline-item pr-2 white-text">
+                        <i className="fab fa-raspberry-pi pr-1"/>
+                        {data.ibu}
+                    </li>
+
+                    <li className="list-inline-item pr-2 white-text">
+                        <i className="fas fa-beer pr-1"/>
+                        {data.abv}%
+                    </li>
+
+                    <li className="list-inline-item pr-2 white-text">
+                        <i className="fas fa-palette pr-1"/>
+                        {data.srm}
+                    </li>
+                </ul>
             </div>
         </div>
     );

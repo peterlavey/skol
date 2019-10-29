@@ -1,14 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import Header from "./components/header";
+import Navbar from "./components/navbar";
 import Beers from "./components/beers";
+import {MDBContainer} from "mdbreact";
+import Search from "./components/search";
 
 function App() {
-  return (
-    <div className={'container-fluid'}>
-      <Header/>
-      <Beers/>
-    </div>
+    const container = {height: 1300};
+
+    return (
+        <div className={'container-fluid'}>
+            <Navbar/>
+            {test}
+            <MDBContainer style={container} className="text-center mt-2 pt-5">
+                <Search search={''}/>
+                <Beers numCols={4}/>
+            </MDBContainer>
+        </div>
   );
 }
 
