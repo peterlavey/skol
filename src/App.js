@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, {useContext} from 'react';
 import './App.css';
 import Navbar from "./components/navbar";
-import Beers from "./components/beers";
 import {MDBContainer} from "mdbreact";
-import Search from "./components/search";
+import Store from "./store";
+import Home from "./containers/home";
 
 function App() {
     const container = {height: 1300};
@@ -11,10 +11,10 @@ function App() {
     return (
         <div className={'container-fluid'}>
             <Navbar/>
-            {test}
             <MDBContainer style={container} className="text-center mt-2 pt-5">
-                <Search search={''}/>
-                <Beers numCols={4}/>
+                <Store>
+                   <Home/>
+                </Store>
             </MDBContainer>
         </div>
   );
