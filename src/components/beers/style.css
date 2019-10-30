@@ -1,0 +1,14 @@
+.beer-enter {
+    opacity: 0;
+}
+.beer-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+.beer-exit {
+    opacity: 1;
+}
+.beer-exit-active {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+}

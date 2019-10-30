@@ -1,25 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+import {MDBCol, MDBRow} from "mdbreact";
+import Store from "./store";
+import Navbar from "./components/navbar";
+import Home from "./containers/home";
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    return (
+        <div>
+            <Navbar/>
+            <MDBRow className={'mt-5'}>
+                <MDBCol xs={12} sm={12} md={10} lg={8} xl={8} className={'offset-md-1 offset-lg-2 offset-xl-2 p-0'}>
+                    <Store>
+                        <Home/>
+                    </Store>
+                </MDBCol>
+            </MDBRow>
+        </div>
   );
 }
 
