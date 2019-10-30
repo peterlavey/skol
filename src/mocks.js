@@ -16,7 +16,7 @@ export const beers = [
             toastyness: 0,
             strongness: 0
         },
-        image: 'https://www.javas.cl/image/cache/catalog/CERVEZAS/bundor%20kali-500x500.png'
+        image: 'https://untappd.akamaized.net/site/beer_logos_hd/beer-1887370_e0fea_hd.jpeg'
     },
     {
         id: 2,

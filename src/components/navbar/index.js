@@ -19,12 +19,12 @@ class Navbar extends React.Component {
     }
 
     render() {
-        const bgPink = {backgroundColor: '#000'};
+        const style = {backgroundColor: '#000'};
 
         return(
             <Router>
                 <header>
-                    <MDBNavbar style={bgPink} dark expand="md" scrolling fixed="top">
+                    <MDBNavbar style={style} dark expand="md" scrolling fixed="top">
                         <MDBNavbarBrand href="/">
                             <strong>Skol</strong>
                         </MDBNavbarBrand>
@@ -32,16 +32,16 @@ class Navbar extends React.Component {
                         <MDBCollapse isOpen = { this.state.collapse } navbar>
                             <MDBNavbarNav left>
                                 <MDBNavItem active>
-                                    <MDBNavLink to="#">Home</MDBNavLink>
+                                    <MDBNavLink to="#">Inicio</MDBNavLink>
                                 </MDBNavItem>
                                 <MDBNavItem>
-                                    <MDBNavLink to="#">Features</MDBNavLink>
+                                    <MDBNavLink to="#">Cervecerías</MDBNavLink>
                                 </MDBNavItem>
                                 <MDBNavItem>
-                                    <MDBNavLink to="#">Pricing</MDBNavLink>
+                                    <MDBNavLink to="#">Tipos</MDBNavLink>
                                 </MDBNavItem>
                                 <MDBNavItem>
-                                    <MDBNavLink to="#">Options</MDBNavLink>
+                                    <MDBNavLink to="#">Configuraciones</MDBNavLink>
                                 </MDBNavItem>
                             </MDBNavbarNav>
                             <MDBNavbarNav right>

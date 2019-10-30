@@ -1,17 +1,21 @@
 import React from 'react';
-import Beer from "../beer3";
+import Beer from "../beer";
+import {CSSTransition, TransitionGroup} from "react-transition-group";
+import './style.css';
 
 const Beers = ({beers = [], numCols = 3})=> {
     const beersCards = beers.map((beer, i)=> (
-        <div className={`col-sm-${12 / numCols} mt-4`} key={`beer${i}`}>
-            <Beer data={beer}/>
-        </div>
+        <CSSTransition timeout={300} classNames={'beer'} key={`beer${i}`}>
+            <div className={`col-sm-${12 / numCols} mt-4`}  >
+                <Beer data={beer}/>
+            </div>
+        </CSSTransition>
     ));
 
     return (
-        <div className="row card-deck">
+        <TransitionGroup className="row card-deck">
             {beersCards}
-        </div>
+        </TransitionGroup>
     );
 };
 
