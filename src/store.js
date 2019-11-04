@@ -33,13 +33,14 @@ function reducer(state, action) {
 }
 
 function search(search, beers) {
-    console.log(beers.length);
     const searchRegx = new RegExp(cleanString(search), 'g');
     const searchByName = beers.filter((beer)=> cleanString(beer.name).match(searchRegx));
     const searchByBrewery = beers.filter((beer)=> cleanString(beer.brewery).match(searchRegx));
     const searchByType = beers.filter((beer)=> cleanString(beer.type).match(searchRegx));
+    const searchByCountry = beers.filter((beer)=> cleanString(beer.country).match(searchRegx));
+    const searchByRegion = beers.filter((beer)=> cleanString(beer.region).match(searchRegx));
 
-    return removeDuplicates([...searchByName, ...searchByBrewery, ...searchByType], 'id');
+    return removeDuplicates([...searchByName, ...searchByBrewery, ...searchByType, ...searchByCountry, ...searchByRegion], 'id');
 }
 
 function removeDuplicates(array, key) {
