@@ -33,6 +33,7 @@ function reducer(state, action) {
 }
 
 function search(search, beers) {
+    //todo: Cuando esto este completo hay que quitar la duplicidad.
     const searchRegx = new RegExp(cleanString(search), 'g');
     const searchByName = beers.filter((beer)=> cleanString(beer.name).match(searchRegx));
     const searchByBrewery = beers.filter((beer)=> cleanString(beer.brewery).match(searchRegx));
