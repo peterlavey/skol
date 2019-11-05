@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Beer from './index';
+import Beers from './index';
 import {beers} from '../../mocks';
 
 const props = {
@@ -12,7 +12,7 @@ describe('When the Beers component is instantiated', () => {
     let component;
 
     beforeAll(()=> {
-        component = shallow(<Beer {...props}/>);
+        component = shallow(<Beers {...props}/>);
     });
 
     it('should render correctly', () => {
@@ -25,7 +25,7 @@ describe('When the Beers component is instantiated without numCols', () => {
 
     beforeAll(()=> {
         const _props = {beers};
-        component = shallow(<Beer {..._props}/>);
+        component = shallow(<Beers {..._props}/>);
     });
 
     it('should render 3 cols', () => {
@@ -39,7 +39,7 @@ describe('When the Beers component is instantiated without beers', () => {
     let component;
 
     beforeAll(()=> {
-        component = shallow(<Beer/>);
+        component = shallow(<Beers/>);
     });
 
     it('should render nothing', () => {
